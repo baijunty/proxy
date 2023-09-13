@@ -31,13 +31,13 @@ if [ "$ARCH" = "x86_64" ] ; then
    /bin/tar -vxf shadowsocks-${SS_VERSION}.x86_64-unknown-linux-gnu.tar.xz 
    /bin/tar -vzxf kcptun-linux-amd64-${KCP_VERSION}.tar.gz
    killProcessByName client_linux_amd64 server_linux_amd64 sslocal ssserver
-   mv client_linux_amd64 server_linux_amd64 sslocal ssserver /bin/
-   rm "shadowsocks-${SS_VERSION}.x86_64-unknown-linux-gnu.tar.xz" "kcptun-linux-amd64-${KCP_VERSION}.tar.gz" ssmanager ssservice ssurl
+   mv -f client_linux_amd64 server_linux_amd64 sslocal ssserver /bin/
+   rm -f "shadowsocks-${SS_VERSION}.x86_64-unknown-linux-gnu.tar.xz" "kcptun-linux-amd64-${KCP_VERSION}.tar.gz" ssmanager ssservice ssurl
 elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]  ; then
    /bin/wget https://github.com/shadowsocks/shadowsocks-rust/releases/download/${SS_VERSION}/shadowsocks-${SS_VERSION}.aarch64-unknown-linux-gnu.tar.xz https://github.com/xtaci/kcptun/releases/download/v${KCP_VERSION}/kcptun-linux-arm64-${KCP_VERSION}.tar.gz 
    /bin/tar -vxf shadowsocks-${SS_VERSION}.aarch64-unknown-linux-gnu.tar.xz
    /bin/tar -vzxf kcptun-linux-arm64-${KCP_VERSION}.tar.gz 
    killProcessByName client_linux_arm64 server_linux_arm64 sslocal ssserver
-   mv client_linux_arm64 server_linux_arm64 sslocal ssserver /bin/
-   rm "kcptun-linux-arm64-${KCP_VERSION}.tar.gz" "shadowsocks-${SS_VERSION}.aarch64-unknown-linux-gnu.tar.xz" ssmanager ssservice ssurl
+   mv -f client_linux_arm64 server_linux_arm64 sslocal ssserver /bin/
+   rm -f "kcptun-linux-arm64-${KCP_VERSION}.tar.gz" "shadowsocks-${SS_VERSION}.aarch64-unknown-linux-gnu.tar.xz" ssmanager ssservice ssurl
 fi
